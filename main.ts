@@ -1,11 +1,11 @@
 /**
- * Blocks for driving the Kitronik Opinsys:Nalle Board
+ * Blocks for driving Opinsys:Nalle Board
  */
-//% weight=100 color=#00A654 icon="\uf1b9" block="Opinsys:Nalle"
+//% weight=100 color=#00A654 icon="\f1b0" block="Opinsys:Nalle"
 namespace opinsys_nalle {
 
 	/************************************************************************************************************************************************
-	* micro:bit Opinsys:Nalle / :MOVE mini blocks
+	* micro:bit Opinsys:Nalle
 	************************************************************************************************************************************************/
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
@@ -16,9 +16,9 @@ namespace opinsys_nalle {
     /**
      * Drives forwards. Call stop to stop
      */
-    //% blockId=kitronik_servolite_servos_forward
-    //% block="drive forward"
-    export function forward(): void {
+    //% blockId=opinsys_nalle_tassut_ylos
+    //% block="tassut ylös"
+    export function tassutYlos(): void {
         pins.servoWritePin(AnalogPin.P1, 0);
         pins.servoWritePin(AnalogPin.P2, 180);
     }
@@ -26,8 +26,8 @@ namespace opinsys_nalle {
     /**
      * Drives backwards. Call stop to stop
      */
-    //% blockId=kitronik_servolite_servos_backward
-    //% block="drive backward"
+    //% blockId=opinsys_nalle_tassut_alas
+    //% block="tassut alas"
     export function backward(): void {
         pins.servoWritePin(AnalogPin.P1, 180);
         pins.servoWritePin(AnalogPin.P2, 0);
@@ -76,87 +76,5 @@ namespace opinsys_nalle {
     export function neutral(): void {
         pins.servoWritePin(AnalogPin.P1, 90);
         pins.servoWritePin(AnalogPin.P2, 90);
-    }
-
-    /**
-     * Drives forwards the requested distance and then stops
-     * @param howFar distance to move
-     */
-    //% blockId=kitronik_servolite_drive_forwards
-    //% block="drive forwards %howFar|distance" 
-    export function driveForwards(howFar: number): void {
-        let timeToWait = (howFar * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
-        forward();
-        control.waitMicros(timeToWait);
-        stop();
-    }
-
-    /**
-     * Drives backwards the requested distance and then stops
-     * @param howFar distance to move
-     */
-    //% blockId=kitronik_servolite_drive_backwards
-    //% block="drive backwards %howFar|distance" 
-    export function driveBackwards(howFar: number): void {
-        let timeToWait = (howFar * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
-        backward();
-        control.waitMicros(timeToWait);
-        stop();
-    }
-
-    /**
-     * Turns right through the requested degrees and then stops
-     * needs NumberOfDegreesPerSec tuned to make accurate, as it uses
-     * a simple turn, wait, stop method.
-     * Runs the servos at slower than the right function to reduce wheel slip
-     * @param deg how far to turn, eg: 90
-     */
-    //% blockId=kitronik_servolite_turn_right
-    //% block="turn right %deg|degrees"
-    export function turnRight(deg: number): void {
-        let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
-        pins.servoWritePin(AnalogPin.P1, 130);
-        pins.servoWritePin(AnalogPin.P2, 130);
-        control.waitMicros(timeToWait);
-        stop();
-    }
-
-    /**
-    * Turns left through the requested degrees and then stops
-    * needs NumberOfDegreesPerSec tuned to make accurate, as it uses
-    * a simple turn, wait, stop method.
-    * Runs the servos at slower than the right function to reduce wheel slip
-    * @param deg how far to turn, eg: 90
-    */
-    //% blockId=kitronik_servolite_turn_left
-    //% block="turn left %deg|degrees"
-    export function turnLeft(deg: number): void {
-        let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
-        pins.servoWritePin(AnalogPin.P1, 50);
-        pins.servoWritePin(AnalogPin.P2, 50);
-        control.waitMicros(timeToWait);
-        stop()
-    }
-
-	/**
-     * Allows the setting of the :MOVE mini turn speed.
-     * This allows tuning for the turn x degrees commands
-     * @param degPerSec : How many degrees per second the mini does.
-     */
-    //% blockId=kitronik_servolite_set_turn_speed_param
-    //% block="calibrate turn speed to %DegPerSec|degrees per second" 
-    export function setDegreesPerSecond(degPerSec: number): void {
-        numberOfDegreesPerSec = degPerSec
-    }
-
-    /**
-     * Allows the setting of the :MOVE mini forward / reverse speed.
-     * This allows tuning for the move x distance commands
-     * @param DegPerSec : How many degrees per second the mini does.
-     */
-    //% blockId=kitronik_servolite_set_movement_speed_param 
-    //% block="calibrate forward speed to %DistPerSec|mm per second"
-    export function setDistancePerSecond(distPerSec: number): void {
-        distancePerSec = distPerSec
     }
 }
