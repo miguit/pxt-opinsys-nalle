@@ -1,11 +1,11 @@
 /**
- * Blocks for driving the Kitronik Servo:Lite Board
+ * Blocks for driving the Kitronik Opinsys:Nalle Board
  */
-//% weight=100 color=#00A654 icon="\uf1b9" block="Servo:Lite"
+//% weight=100 color=#00A654 icon="\uf1b9" block="Opinsys:Nalle"
 namespace opinsys_nalle {
 
 	/************************************************************************************************************************************************
-	* micro:bit Servo:Lite / :MOVE mini blocks
+	* micro:bit Opinsys:Nalle / :MOVE mini blocks
 	************************************************************************************************************************************************/
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
