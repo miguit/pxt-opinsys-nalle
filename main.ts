@@ -10,7 +10,7 @@ namespace opinsys_nalle {
 
 
     /**
-     * Drives forwards. Call stop to stop
+     * Drives nalles hands down
      */
     //% blockId=opinsys_nalle_tassut_alas
     //% block="tassut alas"
@@ -20,7 +20,7 @@ namespace opinsys_nalle {
     }
 
     /**
-     * Drives backwards. Call stop to stop
+     * Drives nalles hands up
      */
     //% blockId=opinsys_nalle_tassut_ylos
     //% block="tassut ylös"
@@ -29,6 +29,9 @@ namespace opinsys_nalle {
         pins.servoWritePin(AnalogPin.P2, 0);
     }
 
+    /**
+     * Drives servos to 90 deg angle
+     */
     //% blockId=opinsys_nalle_tassut_eteen
     //% block="tassut eteen"
     export function tassutEteen(): void {
