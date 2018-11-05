@@ -18,7 +18,7 @@ namespace opinsys_nalle {
      */
     //% blockId=opinsys_nalle_tassut_ylos
     //% block="tassut ylös"
-    export function tassutYlos(): void {
+    export function tassutAlas(): void {
         pins.servoWritePin(AnalogPin.P1, 0);
         pins.servoWritePin(AnalogPin.P2, 180);
     }
@@ -28,43 +28,9 @@ namespace opinsys_nalle {
      */
     //% blockId=opinsys_nalle_tassut_alas
     //% block="tassut alas"
-    export function backward(): void {
+    export function tassuYlos(): void {
         pins.servoWritePin(AnalogPin.P1, 180);
         pins.servoWritePin(AnalogPin.P2, 0);
-    }
-
-    /**
-	* Turns left. Call stop to stop
-	*/
-    //% blockId=kitronik_servolite_servos_left
-    //% block="turn left"
-    export function left(): void {
-        pins.servoWritePin(AnalogPin.P1, 0);
-        pins.servoWritePin(AnalogPin.P2, 0);
-    }
-
-	/**
-	 * Turns right. Call ``stop`` to stop
-	 */
-    //% blockId=kitronik_servolite_servos_right
-    //% block="turn right"
-    export function right(): void {
-        pins.servoWritePin(AnalogPin.P1, 180);
-        pins.servoWritePin(AnalogPin.P2, 180);
-    }
-
-	/**
-	 * Stop for 360 servos.
-	 * rather than write 90, which may not stop the servo moving if it is out of trim
-	 * this stops sending servo pulses, which has the same effect.
-	 * On a normal servo this will stop the servo where it is, rather than return it to neutral position.
-	 * It will also not provide any holding force.
-     */
-    //% blockId=kitronik_servolite_servos_stop
-    //% block="stop"
-    export function stop(): void {
-        pins.analogWritePin(AnalogPin.P1, 0);
-        pins.analogWritePin(AnalogPin.P2, 0);
     }
 
 	/**
@@ -73,7 +39,7 @@ namespace opinsys_nalle {
      */
     //% blockId=kitronik_servolite_servos_neutral
     //% block="goto neutral position"
-    export function neutral(): void {
+    export function tassutEteen(): void {
         pins.servoWritePin(AnalogPin.P1, 90);
         pins.servoWritePin(AnalogPin.P2, 90);
     }
