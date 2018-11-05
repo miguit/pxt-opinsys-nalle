@@ -1,7 +1,4 @@
-/**
- * Blocks for driving Opinsys:Nalle Board
- */
-//% weight=100 color=fgfgfg block="Opinsys:Nalle"
+//% weight=100 color=000000 block="Opinsys:Nalle"
 namespace opinsys_nalle {
 
 	/************************************************************************************************************************************************
