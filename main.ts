@@ -1,4 +1,4 @@
-//% //% weight=5 color=#2699BF icon="\uf110" block="Opinsys:Nalle"
+//% //% weight=5 color=#2699BF icon="\uf1b0" block="Opinsys:Nalle"
 namespace opinsys_nalle {
 
 	/************************************************************************************************************************************************
