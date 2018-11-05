@@ -1,4 +1,4 @@
-//% weight=100 color=000000 block="Opinsys:Nalle"
+//% weight=100 color=cccccc block="Opinsys:Nalle"
 namespace opinsys_nalle {
 
 	/************************************************************************************************************************************************
