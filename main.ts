@@ -1,9 +1,9 @@
 enum degreeName {
     //% block=Ylos
     Ylos = 0,
-   //% block=Alas
+    //% block=Alas
     Alas = 180,
-   //% block=Eteen
+    //% block=Eteen
     Eteen = 90
 }
 
@@ -12,18 +12,18 @@ namespace opinsys_nalle {
 
     export class Nalle {
 
-	/************************************************************************************************************************************************
-	* micro:bit Opinsys:Nalle
-	************************************************************************************************************************************************/
-           /**
-         * Shows all LEDs to a given color (range 0-255 for r, g, b). 
-         * @param degree RGB color of the LED
-         */
-    //% blockId="opinsys_nalle_asteet" block="%nalle|asteet %degree=degreeName" 
-    //% weight=85 blockGap=8
-     setDegree(degree: number) {
-        degree = degree >> 0;
-     }
+        /************************************************************************************************************************************************
+        * micro:bit Opinsys:Nalle
+        ************************************************************************************************************************************************/
+        /**
+      * Shows all LEDs to a given color (range 0-255 for r, g, b). 
+      * @param degree RGB color of the LED
+      */
+        //% blockId="opinsys_nalle_asteet" block="%nalle|asteet %degree=degreeName" 
+        //% weight=85 blockGap=8
+        setDegree(degree: number) {
+            degree = degree >> 0;
+        }
     }
 
     export function degree(degree: number): number {
@@ -40,9 +40,9 @@ namespace opinsys_nalle {
     }
     //% blockId=opinsys_nalle_tassu_asteet
     //% block="tassu asteet"
-    export function tassutAsteet(number: degree) {
-        pins.servoWritePin(AnalogPin.P1, degree);
-        pins.servoWritePin(AnalogPin.P2, degree);
+    export function tassutAsteet(number: degreeName) {
+        pins.servoWritePin(AnalogPin.P1, degreeName);
+        pins.servoWritePin(AnalogPin.P2, degreeName);
     }
 
     /**
