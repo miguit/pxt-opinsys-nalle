@@ -25,10 +25,16 @@ namespace opinsys_nalle {
             degree = degree >> 0;
         }
     }
-
-    export function degree(degree: number): number {
-        return degree(degree);
+ /**
+     * Gets the direction
+    */
+    //% weight=2 blockGap=8
+    //% blockId="nalle_degree" block="%degreeName"
+    //% advanced=true
+    export function degree(degree: degreeName): number {
+        return degree;
     }
+
     /**
      * Drives nalles hands down
      */
@@ -38,12 +44,14 @@ namespace opinsys_nalle {
         pins.servoWritePin(AnalogPin.P1, 0);
         pins.servoWritePin(AnalogPin.P2, 180);
     }
+   /*
     //% blockId=opinsys_nalle_tassu_asteet
     //% block="tassu asteet"
     export function tassutAsteet(number: degreeName) {
         pins.servoWritePin(AnalogPin.P1, degreeName);
         pins.servoWritePin(AnalogPin.P2, degreeName);
     }
+    */
 
     /**
      * Drives nalles hands up
